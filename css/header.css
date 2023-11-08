@@ -1,6 +1,6 @@
 .main-header{
     background-color: #fff;
-    padding: 30px;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     font-size: 25px;
@@ -10,7 +10,11 @@
     right: 0;
     box-shadow: 0 8px 8px #0005;
 }
+.main-header .logo{
+    font-size: 2rem;
+    line-height: 1em;
 
-.mani-header > .btn{
+}
+.main-header > .btn{
     cursor: pointer;
 }
