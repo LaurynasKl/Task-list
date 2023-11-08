@@ -1,0 +1,27 @@
+.todo{
+    display: grid;
+    width: 100%;
+    /* grid-template-columns: repeat(4, 1fr); */
+    gap: 2rem;
+}
+
+.todo .column{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.todo .title{
+
+}
+.todo .task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+
+}
+.todo .task-card{
+    border: 1px solid #777;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+}

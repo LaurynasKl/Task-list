@@ -1,0 +1,16 @@
+.main-header{
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 8px #0005;
+}
+
+.mani-header > .btn{
+    cursor: pointer;
+}
