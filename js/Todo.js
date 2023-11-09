@@ -42,17 +42,37 @@ export class Todo{
     }
 
     addTask(task) {
-        this.tasks.push(task);
+        this.tasks.push({
+            ...task,
+            isDeleted: false,
+        });
+        const taskID = ++this.lastUsedTaskId;
+        let tagsHTML = '';
 
+        for(const tag of task.tags){
+            tagsHTML += `<div class="tag" style="color:${tag.color};">${tag.text}</div>`
+        }
+
+        // <button class="fa fa-pencil"></button>
         const HTML = `
-            <li id="task_${++this.lastUsedTaskId}" class="task-card">
-                <div>${task.title}</div>
-                <div>${task.desc}</div>
-                <div>${task.tags}</div>
-                <div>${task.deadLine}</div>
+            <li id="task_${taskID}" class="task-card">
+                <div class="task-action">
+                <button class="fa fa-trash"></button>
+                </div>
+                <div class="task-title">${task.title}</div>
+                <div class="task-desc">${task.desc}</div>
+                <div class="task-tags">${tagsHTML}</div>
+                <div class="task-deadline">${task.deadLine}</div>
             </li>`;
 
-        this.columnsDOM[task.columnIndex].innerHTML += HTML;
+        this.columnsDOM[task.columnIndex].insertAdjacentHTML('beforeend', HTML);
 
+        const taskDOM = document.getElementById(`task_${taskID}`);
+        const deleteButtomDOM = taskDOM.querySelector('.fa-trash');
+
+        deleteButtomDOM.addEventListener('click', () => {
+            this.tasks[taskID - 1].isDeleted = true;
+            taskDOM.remove()
+        })
     }
 }

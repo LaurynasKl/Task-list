@@ -9,6 +9,7 @@
     left: 0;
     right: 0;
     box-shadow: 0 8px 8px #0005;
+    z-index: 1;
 }
 .main-header .logo{
     font-size: 2rem;
